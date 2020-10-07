@@ -1,0 +1,65 @@
+.flash-card{
+    width: 35vh;
+    height:60vh;
+    margin:auto;
+}
+
+.container{
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+hr.rounded {
+  border-top: 8px solid #000000;
+  border-radius: 5px;
+  margin: 5px;
+}
+
+.text-operand{
+    position: absolute;
+    bottom: 0;
+    width: 85%;
+    text-align: right;
+    margin-left: auto; 
+    margin-right: 0;
+    font-size: 10vh;
+    font-weight: bold;
+    /* background-color: aliceblue; */
+}
+
+.text-operator{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    margin-right: auto;
+    font-size: 8vh;
+    font-weight: bold;
+}
+
+.row{
+    margin: auto; 
+    width: inherit; 
+    /* background-color: black; */
+}
+
+.row-operand{
+    height: 30%; 
+}
+
+.row-answer{
+    height: 30%;
+}
+
+.answer{
+    background-color: coral;
+    border-radius: 10px;
+}
+
+.col-4{
+    background-color: aquamarine;
+}
