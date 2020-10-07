@@ -22,6 +22,7 @@ hr.rounded {
 }
 
 .text{
+     display: block;
     color: #000000;
     position: absolute;
     bottom: 0;
@@ -30,6 +31,7 @@ hr.rounded {
 }
 
 .text-operand{
+     
     width: 85%;
     text-align: right;
     margin-left: auto; 
