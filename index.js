@@ -28,7 +28,7 @@ var colors = {
     15: '#476ea9'
 }
 
-let operation = operations[ Math.floor(Math.random() * 4) + 1 ];
+operation = operations[ 0 ];
 
 flashCard = document.getElementById("flashCard");
 firstOperandTxt = document.getElementById("firstOperand");
@@ -47,6 +47,7 @@ var answers = [];
 NewOperation();
 
 function NewOperation() {
+    operation = operations[ Math.floor(Math.random() * 4) + 1 ];
     isSuccess = false;
     choices.forEach(element => {
         element.parentNode.setAttribute("style", "background-color:aliceblue");
