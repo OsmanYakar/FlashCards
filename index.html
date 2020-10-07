@@ -10,14 +10,13 @@
 </head>
 
 <body>
-    <div class="container container-sm container-md container-lg container-xl" style="background: rebeccapurple;">
-        <div class="card flash-card">
+    <div class="container container-sm container-md container-lg container-xl">
+        <div class="card flash-card" id="flashCard">
             <div class="row row-operand">
                 <div class="col-4"></div>
                 <div class="col-8">
                     <!-- FIRST OPERAND -->
                     <div class="text text-operand" id="firstOperand">
-                        20
                     </div>
                 </div>
             </div>
@@ -25,39 +24,43 @@
             <div class="row row-operand">
                 <div class="col-4">
                     <div class="text text-operator" id="operator">
-                        X
                     </div>
                 </div>
                 <!-- SECOND OPERAND -->
                 <div class="col-8">
                     <div class="text text-operand" id="secondOperand">
-                        20
                     </div>
                 </div>
             </div>
             <hr class="rounded">
             <!-- FIRST ANSWER ROW-->
             <div class="row row-answer">
-                <div class="col-4 answer" id="answer-1">
-                    x
+                <div class="col-3 answer-col" onclick="SelectAnswer(this)">
+                    <div class="answer" id="answer-0">
+                    </div>
                 </div>
-                <div class="col-4 answer" id="answer-2">
-                    x
+                <div class="col-3 answer-col" onclick="SelectAnswer(this)">
+                    <div class="answer" id="answer-1">
+                    </div>
                 </div>
-                <div class="col-4 answer" id="answer-3">
-                    x
+                <div class="col-3 answer-col" onclick="SelectAnswer(this)">
+                    <div class="answer" id="answer-2">
+                    </div>
                 </div>
             </div>
             <!-- SECOND ANSWER ROW-->
             <div class="row row-answer">
-                <div class="col-4 answer" id="answer-1">
-                    x
+                <div class="col-3 answer-col" onclick="SelectAnswer(this)">
+                    <div class="answer" id="answer-3">
+                    </div>
                 </div>
-                <div class="col-4 answer" id="answer-2">
-                    x
+                <div class="col-3 answer-col" onclick="SelectAnswer(this)">
+                    <div class="answer" id="answer-4">
+                    </div>
                 </div>
-                <div class="col-4 answer" id="answer-3">
-                    x
+                <div class="col-3 answer-col" onclick="SelectAnswer(this)">
+                    <div class="answer" id="answer-5">
+                    </div>
                 </div>
             </div>
         </div>

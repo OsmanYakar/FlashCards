@@ -1,7 +1,9 @@
 .flash-card{
-    width: 35vh;
+    width: 40vh;
     height:60vh;
     margin:auto;
+    border-radius: 30px;
+    background-color: darksalmon;
 }
 
 .container{
@@ -19,47 +21,47 @@ hr.rounded {
   margin: 5px;
 }
 
-.text-operand{
+.text{
+    color: #000000;
     position: absolute;
     bottom: 0;
+    font-size: 9vh;
+    font-weight: bold;
+}
+
+.text-operand{
     width: 85%;
     text-align: right;
     margin-left: auto; 
     margin-right: 0;
-    font-size: 10vh;
-    font-weight: bold;
-    /* background-color: aliceblue; */
 }
 
 .text-operator{
-    position: absolute;
-    bottom: 0;
     width: 100%;
     display: flex;
-    margin-right: auto;
-    font-size: 8vh;
-    font-weight: bold;
 }
 
 .row{
     margin: auto; 
-    width: inherit; 
-    /* background-color: black; */
+    width: inherit;
+    height: 20%; 
 }
 
-.row-operand{
-    height: 30%; 
-}
-
-.row-answer{
-    height: 30%;
-}
-
-.answer{
-    background-color: coral;
+.answer-col{
+    cursor: default;
+    transition: all 1s;
+    font-size: 3vh;
+    font-weight: bold;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 10px;
+    height: 100%;
+    background-color: aliceblue
 }
 
-.col-4{
-    background-color: aquamarine;
+.answer-col:hover{
+    transform: scale(1.2);
+    background-color: greenyellow;
 }
