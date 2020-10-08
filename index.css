@@ -1,14 +1,12 @@
 .flash-card{
     width: 40vh;
     height:60vh;
-    margin:auto;
     border-radius: 30px;
     background-color: darksalmon;
-    transition: all 2s;
+    transition: all 1s;
 }
 
 .container{
-  margin: 0;
   position: absolute;
   top: 50%;
   left: 50%;
