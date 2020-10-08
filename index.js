@@ -97,10 +97,10 @@ function GenerateAnswers() {
     var randomNumber = Math.floor(Math.random() * 6) + 2;
     answers.push(answer);
     for (i = 0; i < 5; i++) {
-        var generatedAnswer = i % 2 == 0 ? answer + randomNumber * i + 1 : Math.abs(answer - randomNumber * i + 1);
+        var generatedAnswer = i % 2 == 0 && randomNumber % 2 == 0 ? answer + randomNumber * i + 1 : Math.abs(answer - randomNumber * i + 1);
         answers.push(generatedAnswer);
     }
-    console.log(randomNumber + " /" + answers);
+    console.log(answer + " /" + randomNumber + " /" + answers);
 }
 
 function SetChoices() {
