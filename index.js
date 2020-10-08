@@ -47,8 +47,9 @@ var answers = [];
 NewOperation();
 
 function NewOperation() {
-    operation = operations[ Math.floor(Math.random() * 4) + 1 ];
+    answers = [];
     isSuccess = false;
+    operation = operations[ Math.floor(Math.random() * 4) + 1 ];
     choices.forEach(element => {
         element.parentNode.setAttribute("style", "background-color:aliceblue");
     });
@@ -72,12 +73,7 @@ function SetOperands() {
             break;
         case operations[ 3 ]:
             firstOperand = Math.floor(Math.random() * 100);
-            secondOperand = Math.floor(Math.random() * 100);
-            if (secondOperand > firstOperand) {
-                var temp = firstOperand;
-                firstOperand = secondOperand;
-                secondOperand = temp;
-            }
+            secondOperand = Math.floor(Math.random() * 20);
             answer = firstOperand * secondOperand;
             break;
         case operations[ 4 ]:
@@ -98,12 +94,13 @@ function SetTexts() {
 }
 
 function GenerateAnswers() {
-    var randomNumber = Math.floor(Math.random() * 10 + 1);
+    var randomNumber = Math.floor(Math.random() * 6) + 2;
     answers.push(answer);
     for (i = 0; i < 5; i++) {
-        var generatedAnswer = i % 2 == 0 ? answer + randomNumber * i + 2 : Math.abs(answer - randomNumber * i);
+        var generatedAnswer = i % 2 == 0 ? answer + randomNumber * i + 1 : Math.abs(answer - randomNumber * i + 1);
         answers.push(generatedAnswer);
     }
+    console.log(randomNumber + " /" + answers);
 }
 
 function SetChoices() {
@@ -112,7 +109,6 @@ function SetChoices() {
     var number = nums.splice(Math.floor(Math.random() * 6), 1);
     correctChoiceNumber = number;
     correctChoice = "answer-" + number;
-    console.log(correctChoice);
     choice = choices[ number ];
     choice.innerHTML = answer;
     for (i = 5; i > 0; i--) {

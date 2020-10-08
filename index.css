@@ -4,6 +4,7 @@
     margin:auto;
     border-radius: 30px;
     background-color: darksalmon;
+    transition: all 2s;
 }
 
 .container{
@@ -22,7 +23,7 @@ hr.rounded {
 }
 
 .text{
-     display: block;
+    display: block;
     color: #000000;
     position: absolute;
     bottom: 0;
