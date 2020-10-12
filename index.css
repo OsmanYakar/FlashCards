@@ -14,7 +14,7 @@
     margin-top: 5vh;
     border-radius: 30px;
     background-color: darksalmon;
-    transition: all 1s;
+    transition: all 0.5s;
 }
 
 .container{
@@ -69,15 +69,14 @@ hr.rounded {
     border-radius: 10px;
     height: 70%;
     background-color: aliceblue;
-    transition: all 1s;
+    transition: all 0.5s;
 }
 
 .info-text,.score-text{
     margin:auto;
-    font-size: 2vh;
+    font-size: 3vh;
     cursor: default;
     font-weight: bold;
-    transition: all 1s;
 }
 
 .again-btn{
