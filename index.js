@@ -1,9 +1,17 @@
 var firstOperand = 0;
 var secondOperand = 0;
 var answer = 0;
+var score = 0;
 var correctChoiceNumber = 7;
 var correctChoice = "";
 var isSuccess;
+var successPoint = 10;
+var failurePoint = 2;
+var remainingChoices = [];
+
+var btnRed = "#FF3C3C";
+var btnGreen = "#BEFF3C";
+
 var operations = {
     1: '+',
     2: '-',
@@ -34,6 +42,9 @@ flashCard = document.getElementById("flashCard");
 firstOperandTxt = document.getElementById("firstOperand");
 secondOperandTxt = document.getElementById("secondOperand");
 operatorTxt = document.getElementById("operator");
+playerScoreTxt = document.getElementById("playerScore");
+againBtnContainer = document.getElementById("againBtnContainer");
+infoTxt = document.getElementById("info");
 choice1 = document.getElementById("answer-0");
 choice2 = document.getElementById("answer-1");
 choice3 = document.getElementById("answer-2");
@@ -41,10 +52,10 @@ choice4 = document.getElementById("answer-3");
 choice5 = document.getElementById("answer-4");
 choice6 = document.getElementById("answer-5");
 
-var choices = [ choice1, choice2, choice3, choice4, choice5, choice6 ]
+var choices = [ choice1, choice2, choice3, choice4, choice5, choice6 ];
 var answers = [];
 
-NewOperation();
+NewGame();
 
 function NewOperation() {
     answers = [];
@@ -56,6 +67,8 @@ function NewOperation() {
     SetOperands();
     SetTexts();
     SetChoices();
+    ResetRemainingChoices();
+    SetRemainingChoices();
 }
 
 function SetOperands() {
@@ -100,7 +113,6 @@ function GenerateAnswers() {
         var generatedAnswer = i % 2 == 0 && randomNumber % 2 == 0 ? answer + randomNumber * i + 1 : Math.abs(answer - randomNumber * i + 1);
         answers.push(generatedAnswer);
     }
-    console.log(answer + " /" + randomNumber + " /" + answers);
 }
 
 function SetChoices() {
@@ -121,21 +133,28 @@ function SetChoices() {
 
 function SelectAnswer(div) {
     if (choices[ correctChoiceNumber ].id == div.firstElementChild.id) {
+        console.log("doğru");
+        SetDivColor(div, btnGreen);
         if (!isSuccess) {
-            choices.forEach(element => {
-                element.innerHTML = "↺";
-            });
-            div.firstElementChild.innerHTML = "✔"
+            isSuccess = true;
+            score += successPoint;
+            setTimeout(NewOperation, 1000);
         }
-        isSuccess = true;
     }
     else {
-        if (!isSuccess)
-            div.setAttribute("style", "background-color:#B31004");
-        else {
-            NewOperation();
+        if (!isSuccess) {
+            if (remainingChoices.includes(div.firstElementChild.id)) {
+                score -= failurePoint;
+                index = remainingChoices.indexOf(div.firstElementChild.id);
+                remainingChoices.splice(index, 1);
+                SetDivColor(div, btnRed);
+                if (remainingChoices.length < 2) {
+                    GameOver();
+                }
+            }
         }
     }
+    UpdateScore();
 }
 
 function ChangeBackgroundColor() {
@@ -143,3 +162,41 @@ function ChangeBackgroundColor() {
     flashCard.setAttribute("style", "background-color:" + color + ";")
 }
 
+function SetRemainingChoices() {
+    choices.forEach(element => {
+        remainingChoices.push(element.id);
+    });
+}
+
+function ResetRemainingChoices() {
+    remainingChoices = [];
+}
+
+function UpdateScore() {
+    playerScoreTxt.innerHTML = score;
+}
+
+function GameOver() {
+    infoTxt.innerHTML = "Game Over";
+    CreateAgainButton();
+}
+
+function NewGame() {
+    againBtnContainer.innerHTML = "";
+    infoTxt.innerHTML = "Score";
+    UpdateScore();
+    NewOperation();
+
+}
+
+function CreateAgainButton() {
+    var againBtn = document.createElement("button");
+    againBtn.setAttribute("class", "btn btn-warning again-btn");
+    againBtn.setAttribute("onclick", "NewGame()");
+    againBtn.innerHTML = "Play Again";
+    againBtnContainer.appendChild(againBtn);
+}
+
+function SetDivColor(div, color) {
+    div.setAttribute("style", "background-color:" + color + ";");
+}

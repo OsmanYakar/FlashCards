@@ -10,11 +10,22 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
+
         <div class="card flash-card" id="flashCard">
+            <div class="card info-card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-7 info-text" id="info">Score</div>
+                        <div class="col-5 score-text" id="playerScore">0</div>
+                    </div>
+                </div>
+            </div>
             <div class="row row-operand">
-                <div class="col-4"></div>
-                <div class="col-8">
+                <div class="col-4">
+
+                </div>
+                <div class=" col-8">
                     <!-- FIRST OPERAND -->
                     <div class="text text-operand" id="firstOperand">
                     </div>
@@ -34,34 +45,31 @@
             </div>
             <hr class="rounded">
             <!-- FIRST ANSWER ROW-->
-            <div class="row row-answer">
+            <div class="row row-answer" id="first-answer-row">
                 <div class="col-3 answer-col" onclick="SelectAnswer(this)">
-                    <div class="answer" id="answer-0">
-                    </div>
+                    <div id="answer-0"></div>
                 </div>
                 <div class="col-3 answer-col" onclick="SelectAnswer(this)">
-                    <div class="answer" id="answer-1">
-                    </div>
+                    <div id="answer-1"></div>
                 </div>
                 <div class="col-3 answer-col" onclick="SelectAnswer(this)">
-                    <div class="answer" id="answer-2">
-                    </div>
+                    <div id="answer-2"></div>
                 </div>
             </div>
             <!-- SECOND ANSWER ROW-->
-            <div class="row row-answer">
+            <div class="row row-answer" id="second-answer-row">
                 <div class="col-3 answer-col" onclick="SelectAnswer(this)">
-                    <div class="answer" id="answer-3">
-                    </div>
+                    <div id="answer-3"></div>
                 </div>
                 <div class="col-3 answer-col" onclick="SelectAnswer(this)">
-                    <div class="answer" id="answer-4">
-                    </div>
+                    <div id="answer-4"></div>
                 </div>
                 <div class="col-3 answer-col" onclick="SelectAnswer(this)">
-                    <div class="answer" id="answer-5">
-                    </div>
+                    <div id="answer-5"></div>
                 </div>
+            </div>
+            <div class="again-btn-container" id="againBtnContainer">
+
             </div>
         </div>
     </div>

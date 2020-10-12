@@ -1,6 +1,17 @@
+.info-card{
+    width: 35vh;
+    margin: auto;
+    border-radius: 2vh;
+    transition: all 1s;
+    background-color: aliceblue;
+    text-align: center;
+}
+
 .flash-card{
     width: 40vh;
-    height:60vh;
+    height:80vh;
+    margin: auto;
+    margin-top: 5vh;
     border-radius: 30px;
     background-color: darksalmon;
     transition: all 1s;
@@ -30,7 +41,6 @@ hr.rounded {
 }
 
 .text-operand{
-     
     width: 85%;
     text-align: right;
     margin-left: auto; 
@@ -50,7 +60,6 @@ hr.rounded {
 
 .answer-col{
     cursor: default;
-    transition: all 1s;
     font-size: 3vh;
     font-weight: bold;
     margin: auto;
@@ -58,11 +67,34 @@ hr.rounded {
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    height: 100%;
-    background-color: aliceblue
+    height: 70%;
+    background-color: aliceblue;
+    transition: all 1s;
 }
 
-.answer-col:hover{
-    transform: scale(1.2);
-    background-color: greenyellow;
+.info-text,.score-text{
+    margin:auto;
+    font-size: 2vh;
+    cursor: default;
+    font-weight: bold;
+    transition: all 1s;
 }
+
+.again-btn{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    font-size: 3vh;
+    width: 35vh;
+}
+
+.again-btn-container{
+    position: relative;
+    margin: auto; 
+    width: inherit;
+    height: 10%; 
+}
+
