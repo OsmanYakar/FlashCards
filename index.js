@@ -4,7 +4,8 @@ var answer = 0;
 var score = 0;
 var correctChoiceNumber = 7;
 var correctChoice = "";
-var isSuccess;
+var isSuccess = false;
+var isGameFinished = false;
 var successPoint = 10;
 var failurePoint = 2;
 var remainingChoices = [];
@@ -126,9 +127,8 @@ function SetChoices() {
 
 function SelectAnswer(div) {
     if (choices[ correctChoiceNumber ].id == div.firstElementChild.id) {
-        console.log("doğru");
         SetDivColor(div, btnGreen);
-        if (!isSuccess) {
+        if (!isSuccess && !isGameFinished) {
             isSuccess = true;
             score += successPoint;
             setTimeout(NewOperation, 1000);
@@ -170,12 +170,14 @@ function UpdateScore() {
 }
 
 function GameOver() {
+    isGameFinished = true;
     CreateAgainButton();
 }
 
 function NewGame() {
     againBtnContainer.innerHTML = "";
     infoTxt.innerHTML = "Score";
+    isGameFinished = false;
     UpdateScore();
     NewOperation();
 
