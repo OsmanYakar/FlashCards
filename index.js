@@ -100,8 +100,8 @@ function SetTexts() {
 }
 
 function GenerateAnswers() {
-    var randomNumber = Math.floor(Math.random() * 6) + 2;
     answers.push(answer);
+    var randomNumber = Math.floor(Math.random() * 6) + 2;
     for (i = 0; i < 5; i++) {
         var generatedAnswer = i % 2 == 0 && randomNumber % 2 == 0 ? answer + randomNumber * i + 1 : Math.abs(answer - randomNumber * i + 1);
         answers.push(generatedAnswer);
@@ -170,7 +170,6 @@ function UpdateScore() {
 }
 
 function GameOver() {
-    infoTxt.innerHTML = "Game Over";
     CreateAgainButton();
 }
 
@@ -186,8 +185,10 @@ function CreateAgainButton() {
     var againBtn = document.createElement("button");
     againBtn.setAttribute("class", "btn btn-warning again-btn");
     againBtn.setAttribute("onclick", "NewGame()");
-    againBtn.innerHTML = "Play Again";
+    againBtn.innerHTML = "SPlay Again";
+
     againBtnContainer.appendChild(againBtn);
+
 }
 
 function SetDivColor(div, color) {

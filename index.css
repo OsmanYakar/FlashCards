@@ -15,6 +15,7 @@
     border-radius: 30px;
     background-color: darksalmon;
     transition: all 0.5s;
+    box-shadow: 10px 15px;
 }
 
 .container{
@@ -36,7 +37,7 @@ hr.rounded {
     color: #000000;
     position: absolute;
     bottom: 0;
-    font-size: 9vh;
+    font-size: 8vh;
     font-weight: bold;
 }
 
@@ -73,13 +74,14 @@ hr.rounded {
 }
 
 .info-text,.score-text{
-    margin:auto;
-    font-size: 3vh;
+    margin: auto;
+    font-size: 4vh;
     cursor: default;
     font-weight: bold;
 }
 
 .again-btn{
+    width: 35vh;
     margin: 0;
     position: absolute;
     top: 50%;
@@ -87,7 +89,7 @@ hr.rounded {
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     font-size: 3vh;
-    width: 35vh;
+    font-weight: bold;
 }
 
 .again-btn-container{
@@ -97,3 +99,14 @@ hr.rounded {
     height: 10%; 
 }
 
+.info-display{
+    width: 100%;
+    max-width: 320px;
+    border-radius: 2vh;
+    background-color: aliceblue;
+    box-shadow: 5px 8px;
+}
+
+.info-col{
+    padding: 5px;
+}
