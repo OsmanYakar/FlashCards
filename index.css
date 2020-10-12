@@ -36,7 +36,7 @@ hr.rounded {
     display: block;
     color: #000000;
     position: absolute;
-    bottom: 0;
+    bottom: 0;  
     font-size: 8vh;
     font-weight: bold;
 }
@@ -71,6 +71,8 @@ hr.rounded {
     height: 70%;
     background-color: aliceblue;
     transition: all 0.5s;
+    box-shadow: 5px 8px;
+
 }
 
 .info-text,.score-text{
