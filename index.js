@@ -183,6 +183,7 @@ function GameOver() {
 function NewGame() {
     againBtnContainer.innerHTML = "";
     infoTxt.innerHTML = "Score";
+    score = 0;
     isGameFinished = false;
     UpdateScore();
     NewOperation();
@@ -193,7 +194,7 @@ function CreateAgainButton() {
     var againBtn = document.createElement("button");
     againBtn.setAttribute("class", "btn btn-warning again-btn");
     againBtn.setAttribute("onclick", "NewGame()");
-    againBtn.innerHTML = "SPlay Again";
+    againBtn.innerHTML = "Play Again";
 
     againBtnContainer.appendChild(againBtn);
 
